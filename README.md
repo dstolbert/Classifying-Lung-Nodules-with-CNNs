@@ -18,7 +18,7 @@ Data included three-dimensional images moving along the transverse axis of patie
 
 While much work has been done processing these files in three-dimensions, I wanted to determine the viability of simpler two-dimensional convolutional neural networks. Using the annotated nodules, I created two-dimensional patches of each nodule. To create negative patches for classification, I took randomized slices that were offset from the center of nodules in patients who only had one lung nodule. This was done to reduce the likelihood of obtaining a lung nodule in the negative patches.
 
-### Modelling
+### Modeling
 
 Both the classification and localization models followed a similar architecture. The models had 3 convolutional/pooling layers, a flatten layer, a dense layer, and a final dense output layer. I also utilized transfer learning with the VGG16 model, a very deep CNN that has performed quite well on the ImageNet dataset. Surprisingly the simpler CNNs outperformed the VGG16 models. 
 
