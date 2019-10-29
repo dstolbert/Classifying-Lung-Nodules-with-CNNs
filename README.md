@@ -14,7 +14,7 @@ Data were collected form the Luna16 Challenge website https://luna16.grand-chall
 
 ### Preprocessing
 
-Data included three-dimensional images moving along the transverse axis of patients. Labeling of nodules was done by four radiologists and included if they were >3mm and accepted by at least 3 of the 4 radiologists. The original dataset contained approximately 62GB of data.
+Data included three-dimensional images moving along the transverse axis of patients. Labeling of nodules was done by four radiologists and included if they were >3mm and accepted by at least 3 of the 4 radiologists. The original dataset contained approximately 118GB of data.
 
 While much work has been done processing these files in three-dimensions, I wanted to determine the viability of simpler two-dimensional convolutional neural networks. Using the annotated nodules, I created two-dimensional patches of each nodule. To create negative patches for classification, I took randomized slices that were offset from the center of nodules in patients who only had one lung nodule. This was done to reduce the likelihood of obtaining a lung nodule in the negative patches.
 
