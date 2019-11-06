@@ -2,34 +2,40 @@
 Classifying Lung Nodules with CNNs on Lung CT Scans originally from the Cancer Imaging Archives
 
 ** If you are looking for a quick overview, I would suggest viewing the 'Demo' and 'Model evaluation' notebooks! These show the final models I developed and give a summary of how I approached the problem. **
+![img](https://github.com/dstolbert/Classifying-Lung-Nodules-with-CNNs/blob/master/imgs/presentation%20-%2001.jpg)
 
-### Dataset and problem statement
+![img](https://github.com/dstolbert/Classifying-Lung-Nodules-with-CNNs/blob/master/imgs/presentation%20-%2002.jpg)
 
-Can deep learning be used to classify and label nodules in the lungs of patients following a CT scan?
+![img](https://github.com/dstolbert/Classifying-Lung-Nodules-with-CNNs/blob/master/imgs/presentation%20-%2003.jpg)
 
-The modelling problem was divided into classifying images with or without nodules; and then labelling positively identified nodules with a second model.
+![img](https://github.com/dstolbert/Classifying-Lung-Nodules-with-CNNs/blob/master/imgs/presentation%20-%2004.jpg)
 
+![img](https://github.com/dstolbert/Classifying-Lung-Nodules-with-CNNs/blob/master/imgs/presentation%20-%2005.jpg)
 
-Data were collected form the Luna16 Challenge website https://luna16.grand-challenge.org/ 
+![img](https://github.com/dstolbert/Classifying-Lung-Nodules-with-CNNs/blob/master/imgs/presentation%20-%2006.jpg)
 
-### Preprocessing
+![img](https://github.com/dstolbert/Classifying-Lung-Nodules-with-CNNs/blob/master/imgs/presentation%20-%2007.jpg)
 
-Data included three-dimensional images moving along the transverse axis of patients. Labeling of nodules was done by four radiologists and included if they were >3mm and accepted by at least 3 of the 4 radiologists. The original dataset contained approximately 118GB of data.
+![img](https://github.com/dstolbert/Classifying-Lung-Nodules-with-CNNs/blob/master/imgs/presentation%20-%2008.jpg)
 
-While much work has been done processing these files in three-dimensions, I wanted to determine the viability of simpler two-dimensional convolutional neural networks. Using the annotated nodules, I created two-dimensional patches of each nodule. To create negative patches for classification, I took randomized slices that were offset from the center of nodules in patients who only had one lung nodule. This was done to reduce the likelihood of obtaining a lung nodule in the negative patches.
+![img](https://github.com/dstolbert/Classifying-Lung-Nodules-with-CNNs/blob/master/imgs/presentation%20-%2009.jpg)
 
-### Modeling
+![img](https://github.com/dstolbert/Classifying-Lung-Nodules-with-CNNs/blob/master/imgs/presentation%20-%2010.jpg)
 
-Both the classification and localization models followed a similar architecture. The models had 3 convolutional/pooling layers, a flatten layer, a dense layer, and a final dense output layer. I also utilized transfer learning with the VGG16 model, a very deep CNN that has performed quite well on the ImageNet dataset. Surprisingly the simpler CNNs outperformed the VGG16 models. 
+![img](https://github.com/dstolbert/Classifying-Lung-Nodules-with-CNNs/blob/master/imgs/presentation%20-%2011.jpg)
 
-Data augmentation and dropout were utilized to regularize the models.
+![img](https://github.com/dstolbert/Classifying-Lung-Nodules-with-CNNs/blob/master/imgs/presentation%20-%2012.jpg)
 
-### Summary and future steps
+![img](https://github.com/dstolbert/Classifying-Lung-Nodules-with-CNNs/blob/master/imgs/presentation%20-%2013.jpg)
 
-The best performing classification model had 90% accuracy and a F1 score of 91% in the test set. The best performing localization model was able to locate nodules with a mean absolute error of 2.5 pixels (roughly 2mm in most images) in the X, Y directions and predict the diameter within 2.4 pixels of what the radiologists had labeled. 
+![img](https://github.com/dstolbert/Classifying-Lung-Nodules-with-CNNs/blob/master/imgs/presentation%20-%2014.jpg)
 
-These models could theoretically be used in a data pipeline which divides CT scan images into 65x65 slices. Positively identified slices could then be passed to the localization model and scores could be aggregated to identify the slices with the greatest likelihood of having nodules (similar to a RNN algorithm). While this is feasible, it is likely not the best approach to the problem. 3D CNNs that have been submitted in the Luna16 challenge were able to perform better than the models I have created.
+![img](https://github.com/dstolbert/Classifying-Lung-Nodules-with-CNNs/blob/master/imgs/presentation%20-%2015.jpg)
 
-Further improvements with the models I have created may come from increasing the complexity of the architectures and having access to more data.
+![img](https://github.com/dstolbert/Classifying-Lung-Nodules-with-CNNs/blob/master/imgs/presentation%20-%2016.jpg)
 
-Please reach out to me if you have any questions on the project!
+![img](https://github.com/dstolbert/Classifying-Lung-Nodules-with-CNNs/blob/master/imgs/presentation%20-%2017.jpg)
+
+![img](https://github.com/dstolbert/Classifying-Lung-Nodules-with-CNNs/blob/master/imgs/presentation%20-%2018.jpg)
+
+![img](https://github.com/dstolbert/Classifying-Lung-Nodules-with-CNNs/blob/master/imgs/presentation%20-%2019.jpg)
